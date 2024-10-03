@@ -23,12 +23,12 @@ API para catalogação eficiente de informações sobre as capivaras.
 
 1. Clone o repositório:
     ```bash
-    git@github.com:WilliansonDantas/Task_Management.git
+   git@github.com:WilliansonDantas/capivara-management.git
     ```
 
 2. Navegue para o diretório do projeto:
     ```bash
-    cd task-management-api
+    cd capivara-management
     ```
 
 3. Instale as dependências:
@@ -44,7 +44,7 @@ API para catalogação eficiente de informações sobre as capivaras.
         DATABASE_PORT=3306
         DATABASE_USERNAME=seu_usuario
         DATABASE_PASSWORD=sua_senha
-        DATABASE_NAME=task_management
+        DATABASE_NAME=capivara_management
         ```
 
 5. Suba os contêineres com Docker Compose:
@@ -52,56 +52,9 @@ API para catalogação eficiente de informações sobre as capivaras.
     docker-compose up --build -d
     ```
 
-6. Execute as migrações do banco de dados:
-    ```bash
-    npm run typeorm:migrate
-    ```
-
-7. Inicie a aplicação:
+6. Inicie a aplicação:
     ```bash
     npm run start:dev
     ```
 
 ## <img height="20" src="https://raw.githubusercontent.com/innng/innng/master/assets/soulgem-sayaka.gif"/> Acesse a documentação da API via Swagger em [http://localhost:3000/api](http://localhost:3000/api)
-
-## <img height="20" src="https://raw.githubusercontent.com/innng/innng/master/assets/soulgem-sayaka.gif"/> Teste Manual da Aplicação
-
-Siga os passos abaixo para testar manualmente as funcionalidades da aplicação:
-
-### 1. Criar um Tenant
-
-- Endpoint: `POST /tenants`
-- Exemplo de payload:
-  ```json
-  {
-    "name": "Empresa ABC"
-  }
-
-### 2. Criar um Usuário
-
-- Endpoint: POST /users
-- Exemplo de payload:
-    ```json
-
-    {
-      "username": "joaosilva",
-      "email": "joao@empresaabc.com",
-      "password": "senhaSegura123",
-      "role": "admin",
-      "tenantId": "id-do-tenant-gerado-no-passo-1"
-    }
-
-### 3. Fazer o Login
-- Endpoint: POST /auth/login
-- Exemplo de payload:
-    ```json
-    
-    {
-      "email": "joao@empresaabc.com",
-      "password": "senhaSegura123"
-    }
-
-### 4. Usar o JWT para Acessar Outras Funcionalidades
-Após obter o token JWT no passo 3, insira-o no cabeçalho das próximas requisições.
-
-Você agora pode acessar as demais funcionalidades da API, como gestão de tarefas, listagem de usuários, entre outros.
